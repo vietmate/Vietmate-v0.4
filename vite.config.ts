@@ -11,4 +11,8 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  // Replaces process.env.API_KEY in client code with the string value from build environment
+  define: {
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
+  }
 });
