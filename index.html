@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth h-full overflow-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vietmate | Vietnam Simplified</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind (CDN kept for specific config simplicity) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-red': '#D91B1B',
+              'brand-red-hover': '#B91212',
+              'background-light': '#F9F9F9',
+              'background-warm': '#F8F9FA',
+              'background-cream': '#FFFDF5',
+              'charcoal': '#1A1A1A',
+              'muted-gray': '#333333',
+            },
+            fontFamily: {
+              display: ["Montserrat", "sans-serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            backgroundImage: {
+               'texture': "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkC5_D9Wbr9PewHjNYJuL6EQ7rKUghbhQiV8wQ8VG16oH2AKDz8uAuyLSmhP_XdX58JnuBAHab-IOe0LPv2Vfq7NVEeNjqbiXYTApYlFai22L1ui5bzmKYLquX5enZDEtuSmKWuim4f2B9W28j0vvWZwKd4qOJeAxi-NYLSAAq7tYcFII8IYFz-uchLkedIrZKP1v5NGQSyz6p6aEJVQMNy5Rh1X7HfbsRTak08L8v2zuVGyu8Ua51PvYV3aVuXnfeC6H_h5CAH2is')",
+            }
+          },
+        },
+      };
+    </script>
+    
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .star-filled {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .vivid-img {
+          filter: saturate(1.1) contrast(1.1);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+      }
+      
+      .texture-overlay {
+        position: relative;
+      }
+      .texture-overlay::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.03;
+        pointer-events: none;
+        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkC5_D9Wbr9PewHjNYJuL6EQ7rKUghbhQiV8wQ8VG16oH2AKDz8uAuyLSmhP_XdX58JnuBAHab-IOe0LPv2Vfq7NVEeNjqbiXYTApYlFai22L1ui5bzmKYLquX5enZDEtuSmKWuim4f2B9W28j0vvWZwKd4qOJeAxi-NYLSAAq7tYcFII8IYFz-uchLkedIrZKP1v5NGQSyz6p6aEJVQMNy5Rh1X7HfbsRTak08L8v2zuVGyu8Ua51PvYV3aVuXnfeC6H_h5CAH2is');
+        z-index: 1;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-background-light text-charcoal font-sans transition-colors duration-300 h-full overflow-hidden">
+    <div id="root" class="h-full"></div>
+    <!-- Module Entry Point for Vite -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
